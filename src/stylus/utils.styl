@@ -1,0 +1,31 @@
+// Chrome滚动条样式
+baseScroll()
+	if (arguments == 'dark')
+		&::-webkit-scrollbar
+			width 8px
+			height 8px
+		&::-webkit-scrollbar-track-piece
+			background-color #222222
+		&::-webkit-scrollbar-thumb
+			border-radius 9px
+			background-color #333333
+		&::-webkit-scrollbar-thumb:hover
+			background-color #444444
+	else
+		&::-webkit-scrollbar
+			width 8px
+			height 8px
+		&::-webkit-scrollbar-track-piece
+			background-color #EEEEEE
+		&::-webkit-scrollbar-thumb
+			border-radius 9px
+			background-color #CCCCCC
+		&::-webkit-scrollbar-thumb:hover
+			background-color #BBBBBB
+// after清除浮动
+acf()
+	&:after
+		display block
+		content ''
+		clear both
+		zoom 1

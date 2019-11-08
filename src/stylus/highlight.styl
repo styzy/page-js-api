@@ -1,0 +1,69 @@
+@import 'color.styl'
+@import 'utils.styl'
+code
+	font-family 'Consolas', 'Courier New', 'monospace', 'Microsoft Yahei'
+h1, h2, h3, h4, h5, h6
+	color color-theme
+h1
+	color color-theme - #111111
+	margin 3rem auto
+	&, +h1
+		margin-top 5rem
+h2
+	margin 3rem auto
+	position relative
+	pointer-events none
+	&:before
+		content ''
+		display block
+		height 5rem
+		margin-top -5rem
+	&:after
+		position absolute
+		left 0
+		bottom -0.5rem
+		content ''
+		display block
+		width 100%
+		border-top 1px solid color-theme
+		opacity 0.3
+h3
+	margin 2rem 0
+pre
+	padding 1rem
+	margin 1rem auto
+	border-radius 2px
+	background-color #282c34
+	font-size 0.7rem
+p, table
+	color color-text
+	code
+		padding 0 0.2rem
+		border-radius 4px
+		color color-theme - #111111
+		background-color rgba(color-theme, 0.1)
+	tr
+		&:hover
+			background-color #FAFAFA
+	td
+		&:first-child
+			color color-theme
+			font-weight 600
+code
+	baseScroll('dark')
+.box
+	padding 1rem
+	margin 1.5rem 0
+	border-radius 4px
+	border-left 6px solid color-info
+	background-color rgba(color-info, 0.1)
+	color color-text
+	&.danger
+		border-color color-error
+		background-color rgba(color-error, 0.1)
+	&.success
+		border-color color-success
+		background-color rgba(color-success, 0.1)
+	&.warning
+		border-color color-warn
+		background-color rgba(color-warn, 0.1)

@@ -1,0 +1,27 @@
+@import 'color.styl'
+body
+	margin 0
+	padding 0
+	font-family 'microsoft yahei'
+	font-family 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif
+	-webkit-font-smoothing antialiased
+html
+	font-size 20px
+a
+	text-decoration none
+a, .link
+	color color-theme
+a:hover, .link:hover
+	color color-theme + #222222
+table
+	border-right 1px solid #dfe2e5
+	border-bottom 1px solid #dfe2e5
+	border-spacing 0
+	td, th
+		padding 0.5rem
+		border-left 1px solid #dfe2e5
+		border-top 1px solid #dfe2e5
+		text-align center
+		&.type
+			max-width 10rem
+			line-height 1.5rem

@@ -1,0 +1,137 @@
+@import 'color.styl'
+.logo
+	position fixed
+	top 0
+	left 0
+	width 11rem
+	height 4rem
+	line-height 4rem
+	text-align center
+	font-size 1.2rem
+	font-weight 600
+	color #FFFFFF
+	background-color color-theme
+	cursor pointer
+	user-select none
+	transition 0.3s
+	z-index 2
+	:hover
+		font-size 1.3rem
+		/* background-color: #ff81A2; */
+.header
+	position fixed
+	left 11rem
+	top 0
+	width calc(100vw - 11rem)
+	height 4rem
+	line-height 4rem
+	text-align center
+	font-size 1.2rem
+	font-weight 600
+	color color-theme
+	/* box-shadow: 0 0 5px 0 #CCCCCC; */
+	box-shadow 0 0 5px 0 rgba(0, 0, 0, 0.2)
+	box-sizing border-box
+	background-color rgba(255, 255, 255, 0.95)
+	transition 0.3s
+	z-index 1
+	&:hover
+		background-color #FFFFFF
+.menu-ctn
+	position fixed
+	left 0
+	top 4rem
+	width 11rem
+	height calc(100vh - 4rem)
+	padding-bottom 2rem
+	box-sizing border-box
+	box-shadow 0 0 5px 0 rgba(0, 0, 0, 0.2)
+	transition 0.3s
+	background-color rgba(color-theme, 0.05)
+	z-index 1
+	overflow-y auto
+	.menu
+		position relative
+		cursor pointer
+		*
+			transition 0.3s
+		.menu-title
+			position relative
+			height 1rem
+			padding 1rem 0
+			.name
+				height 1rem
+				margin 0 2.5rem 0 1.5rem
+				line-height 1rem
+				font-size 0.8rem
+				font-weight 600
+				color color-theme
+				white-space nowrap
+			&:hover
+				// background-color #f5d7df
+				background-color rgba(color-theme, 0.1)
+				.name
+					color color-theme - #111111
+				&:after
+					color color-theme - #111111
+			&:after
+				display block
+				content '^'
+				position absolute
+				top 1rem
+				right 1rem
+				height 1rem
+				width 1rem
+				font-size 1rem
+				line-height 1.2rem
+				text-align center
+				color color-theme
+				transform rotate(180deg)
+				transition 0.3s
+			&.empty:after
+				display none
+		.menu-list
+			max-height 0
+			overflow hidden
+			// background-color rgba(color-theme, 0.05)
+			.menu-item
+				padding 0.5rem 1rem 0.5rem 1rem
+				height 1rem
+				line-height 1rem
+				font-size 0.7rem
+				text-indent 2em
+				white-space nowrap
+				color color-theme - #111111
+				&:hover
+					background-color rgba(color-theme, 0.1)
+					color color-theme - #222222
+		&[expand='true']
+			.menu-title
+				&:after
+					transform rotate(0deg)
+			.menu-list
+				max-height 60rem
+	.version
+		padding 1rem 1.5rem
+		height 1rem
+		line-height 1rem
+		font-size 0.8rem
+		font-weight 600
+		text-align center
+		color color-theme
+		border-bottom 1px solid color-theme + #555555
+		&:before
+			content '版本：'
+.main
+	position relative
+	padding 4rem 0 0 11rem
+	.doc
+		max-width 50rem
+		margin auto
+		padding 0 2rem 2rem
+		font-size 0.8rem
+		overflow hidden
+@media only screen and (max-width: 1300px), only screen and (max-device-width: 1300px)
+	.main
+		.doc
+			margin-left 2rem

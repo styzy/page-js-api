@@ -2,10 +2,14 @@ const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const hljs = require('highlight.js')
+const hljs_javascript = require('highlight.js/lib/languages/javascript')
+
+// hljs.registerLanguage('javascript', hljs_javascript)
 
 const webpackConfig = {
     entry: {
-        index: './src/index.js'
+        index: './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -38,6 +42,22 @@ const webpackConfig = {
                 ]
             },
             {
+                test: /\.md$/,
+                use: [{
+                        loader: "html-loader"
+                    },
+                    {
+                        loader: "markdown-loader",
+                        options: {
+                            highlight(code, lang) {
+                                return hljs.highlight(lang, code).value
+                            },
+                            langPrefix: 'hljs language-'
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(gif|jpg|jpeg|png|svg|ttf)$/,
                 loader: 'url-loader',
                 options: {
@@ -54,8 +74,8 @@ const webpackConfig = {
             ignoreOrder: false, // Enable to remove warnings about conflicting order
         }),
         new HtmlWebpackPlugin({
-            title: 'es7-cli',
-            template: 'index.html',
+            title: 'Page API',
+            template: 'src/index.html',
             hash: true,
             minify: true
         })
