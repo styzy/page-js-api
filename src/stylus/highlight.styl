@@ -1,5 +1,12 @@
 @import 'color.styl'
 @import 'utils.styl'
+inline-code()
+	display inline
+	padding 0 0.2rem
+	margin 0 0.2rem
+	border-radius 4px
+	color color-theme - #111111
+	background-color rgba(color-theme, 0.1)
 code
 	font-family 'Consolas', 'Courier New', 'monospace', 'Microsoft Yahei'
 h1, h2, h3, h4, h5, h6
@@ -38,10 +45,7 @@ pre
 p, table
 	color color-text
 	code
-		padding 0 0.2rem
-		border-radius 4px
-		color color-theme - #111111
-		background-color rgba(color-theme, 0.1)
+		inline-code()
 	tr
 		&:hover
 			background-color #FAFAFA
@@ -67,3 +71,5 @@ code
 	&.warning
 		border-color color-warn
 		background-color rgba(color-warn, 0.1)
+	code
+		inline-code()

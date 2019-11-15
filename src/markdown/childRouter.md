@@ -1,23 +1,29 @@
 # 页面层路由
 
+## 路由概念
+
+和框架层路由类似，页面层路由提供开发者在子页面操作框架的能力。
+
+<div class="box info">为了保证代码的可移植性，页面层路由所有的api都有非框架环境<code>polyfill（垫片）</code>，保证代码在非框架情况下仍然可以正常运行。</div>
+
 ## 路由加载
 
-为了保证标签页和框架层的通行畅通和交互方便，我们推荐在每个标签页的js内加上入口方法：
+为了保证标签页和框架层的通信畅通和交互方便，我们推荐在每个标签页的 js 内加上入口方法：
 
 ```javascript
 // 入口方法
 window.init = function(page, globalData) {
-	// TODO 业务
-}
+  // TODO 业务
+};
 ```
 
-上面赋值给window的init属性的匿名方法，会被框架内部调用，调用时机是紧跟在window的onload方法之后。方法传递的`page`参数就是页面层的路由实例，通过它我们可以在页面层获得和框架层近乎一样的路由能力。`globalData`为实例化参数配置中定义的全局传递参数。
+上面赋值给 window 对象的`init`属性的匿名方法，会被框架内部调用，调用时机是紧跟在 window 对象的`onload`钩子之后。方法传递的`page`参数就是页面层的路由实例，通过它我们可以在页面层获得和框架层近乎一样的路由能力。`globalData`为实例化参数配置中定义的全局传递参数。
 
 下面我们就对页面层路由实例`page`进行介绍。
 
 <h2 id="child.open">open(url: String | options: Object)</h2>
 
-页面层路由实例的`open`方法为完全引用框架层路由实例的`open`方法，具体使用说明请参考[框架层路由实例open方法](#open)
+页面层路由实例的`open`方法为完全引用框架层路由实例的`open`方法，具体使用说明请参考[框架层路由实例 open 方法](#open)
 
 <h2 id="child.reload">reload([pageId: String])</h2>
 
@@ -37,18 +43,18 @@ window.init = function(page, globalData) {
 
 <h2 id="child.postMessage">postMessage(payload: Any[, pageId: String])</h2>
 
-页面层路由实例的`postMessage`方法和框架层的`postMessage`方法完全相同，具体使用说明请参考[框架层路由实例postMessage方法](#postMessage)
+页面层路由实例的`postMessage`方法和框架层的`postMessage`方法完全相同，具体使用说明请参考[框架层路由实例 postMessage 方法](#postMessage)
 
 <h2 id="child.setMessageReceiver">setMessageReceiver(messageReceiver: Function)</h2>
 
 `setMessageReceiver`方法用于设置当前标签页面的消息接收器，参数为消息接收器方法，该方法被调用时，会返回`message`消息体。
 
 ```javascript
-var messageReceiver = function(message){
-	console.log(message.data)
-}
+var messageReceiver = function(message) {
+  console.log(message.data);
+};
 
-page.setMessageReceiver(messageReceiver)
+page.setMessageReceiver(messageReceiver);
 ```
 
 <h2 id="child.getMessageReceiver">getMessageReceiver()</h2>
@@ -56,15 +62,15 @@ page.setMessageReceiver(messageReceiver)
 `getMessageReceiver`方法返回当前标签页面的消息接收器函数，默认为`null`。
 
 ```javascript
-page.getMessageReceiver() // return null
+page.getMessageReceiver(); // return null
 
-var messageReceiver = function(message){
-	console.log(message.data)
-}
+var messageReceiver = function(message) {
+  console.log(message.data);
+};
 
-page.setMessageReceiver(messageReceiver)
+page.setMessageReceiver(messageReceiver);
 
-page.getMessageReceiver() === messageReceiver // true
+page.getMessageReceiver() === messageReceiver; // true
 ```
 
 <h2 id="child.syncHeight">syncHeight()</h2>
@@ -80,23 +86,23 @@ page.getMessageReceiver() === messageReceiver // true
 `getPageId`方法返回当前标签页的`pageId`。
 
 ```javascript
-var paegId = page.getPageId()
+var paegId = page.getPageId();
 ```
 
 <h2 id="child.getSourcePageId">getSourcePageId()</h2>
 
-`getSourcePageId`方法返回当前标签页的来源页面的`pageId`，当来源页面为标签页时，返回值为`pageId`，当来源页面为框架层时，返回值为`null`
+`getSourcePageId`方法返回当前标签页的来源页面的`pageId`，当来源页面为框架层时，返回值为`null`
 
 ```javascript
 // 框架层
-var homePageId = page.open('home.html')
+var homePageId = page.open("home.html");
 
 // home.html
-page.getSourcePageId() // return null
-page.open('module.html')
+page.getSourcePageId(); // return null
+page.open("module.html");
 
 // module.html
-page.getSourcePageId() // return homePageId
+page.getSourcePageId(); // return homePageId
 ```
 
 <h2 id="child.getPageData">getPageData()</h2>
@@ -106,12 +112,12 @@ page.getSourcePageId() // return homePageId
 ```javascript
 // 框架层
 var homePageId = page.open({
-	url: 'home.html',
-	data: 1
-})
+  url: "home.html",
+  data: 1
+});
 
 // home.html
-page.getPageData() === 1 // true
+page.getPageData() === 1; // true
 ```
 
 <h2 id="child.getGlobalData">getGlobalData()</h2>
@@ -119,7 +125,7 @@ page.getPageData() === 1 // true
 `getGlobalData`方法返回实例化参数配置中的全局传递参数。
 
 ```javascript
-var globalData = page.getGlobalData()
+var globalData = page.getGlobalData();
 ```
 
 <h2 id="child.messageReceiver">messageReceiver</h2>
@@ -129,18 +135,16 @@ var globalData = page.getGlobalData()
 <div class="box danger">注意：该属性即将在未来版本废弃，替换方案请参考<a href="#child.setMessageReceiver">setMessageReceiver方法
 </a></div>
 
-
 ```javascript
-page.messageReceiver = function(message){
-	console.log(message.data)
-}
+page.messageReceiver = function(message) {
+  console.log(message.data);
+};
 ```
 
 <h2 id="child.recoverCache">recoverCache</h2>
 
-页面层路由实例的`recoverCache`方法和框架层的`recoverCache`方法完全相同，具体使用说明请参考[框架层路由实例recoverCache方法](#recoverCache)
-
+页面层路由实例的`recoverCache`方法和框架层的`recoverCache`方法完全相同，具体使用说明请参考[框架层路由实例 recoverCache 方法](#recoverCache)
 
 <h2 id="child.clearCache">clearCache</h2>
 
-页面层路由实例的`clearCache`方法和框架层的`clearCache`方法完全相同，具体使用说明请参考[框架层路由实例clearCache方法](#clearCache)
+页面层路由实例的`clearCache`方法和框架层的`clearCache`方法完全相同，具体使用说明请参考[框架层路由实例 clearCache 方法](#clearCache)
