@@ -28,6 +28,6 @@
         "webpack-dev-server": "^3.7.2"
     },
     "dependencies": {
-        "@styzy/free-js": "^1.0.9"
+        "@styzy/free-js": "^1.1.0"
     }
 }
