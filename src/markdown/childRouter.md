@@ -30,7 +30,7 @@ window.init = function(page, globalData) {
 var pageId = page.pageId
 ```
 
-<h2 id="child.sourcePageIdId">sourcePageId 属性</h2>
+<h2 id="child.sourcePageId">sourcePageId 属性</h2>
 
 `sourcePageId`属性返回当前标签页的来源页面(即打开当前标签页的页面)的`id`，框架层打开的标签页，`sourcePageId`值为`null`
 
