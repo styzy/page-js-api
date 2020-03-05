@@ -1,18 +1,18 @@
 # 入门概览
 
-## Page.js是什么
+## Page.js 是什么
 
 Page.js，即前端标签页框架，是一套提供给前端开发者快速搭建桌面级标签页应用的成熟框架。
 
-Page.js具有部署方便、可自由扩展、可针对需求二次开发的优点，内置的api满足大部分项目需求。
+Page.js 具有部署方便、可自由扩展、可针对需求二次开发的优点，内置的 api 满足大部分项目需求。
 
 ## 安装
 
-Page.js包括两个js和两个css文件组成，父页面和子页面分别引入对应的js、css资源。
+Page.js 包括两个 js 和两个 css 文件组成，父页面和子页面分别引入对应的 js、css 资源。
 
 ### npm
 
-npm安装方式适合webpack搭建的前端工程化项目，首先安装Page.js
+npm 安装方式适合 webpack 搭建的前端工程化项目，首先安装 Page.js
 
 ```bash
 npm i -S @styzy/page-js
@@ -25,7 +25,6 @@ npm i -S @styzy/page-js
 import Page from '@styzy/page-js/dist/js/page.parent.min.js'
 import '@styzy/page-js/dist/css/page.parent.css'
 
-
 // 子页面
 import Page from '@styzy/page-js/dist/js/page.child.min.js'
 import '@styzy/page-js/dist/css/page.child.css'
@@ -37,11 +36,11 @@ import '@styzy/page-js/dist/css/page.child.css'
 
 ```html
 <!-- 父页面 -->
-<link rel="stylesheet" href="https://unpkg.com/@styzy/page-js/dist/css/page.parent.css">
+<link rel="stylesheet" href="https://unpkg.com/@styzy/page-js/dist/css/page.parent.css" />
 <script type="text/javascript" src="https://unpkg.com/@styzy/page-js/dist/js/page.parent.min.js"></script>
 
 <!-- 子页面 -->
-<link rel="stylesheet" href="https://unpkg.com/@styzy/page-js/dist/css/page.child.css">
+<link rel="stylesheet" href="https://unpkg.com/@styzy/page-js/dist/css/page.child.css" />
 <script type="text/javascript" src="https://unpkg.com/@styzy/page-js/dist/js/page.child.min.js"></script>
 ```
 
@@ -53,10 +52,10 @@ import '@styzy/page-js/dist/css/page.child.css'
 
 ```javascript
 var page = new Page({
-	// 设定标题容器
-	titleContainer: '#titleContainer', 
-	// 设定页面容器
-	viewContainer: '#viewContainer' 
+    // 设定标题容器
+    titleContainer: '#titleContainer',
+    // 设定页面容器
+    viewContainer: '#viewContainer'
 })
 
 page.open('http://baidu.com')

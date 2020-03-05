@@ -1,174 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>
+            <%= htmlWebpackPlugin.options.title %>
+        </title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
-</head>
-
-
-<body>
-    <div class="logo">Page.js</div>
-    <div class="header">API文档</div>
-    <div class="menu-ctn">
-        <div class="version" id="version"></div>
-        <div class="menu">
-            <div class="menu-title">
-                <div class="name">入门概览</div>
-            </div>
-            <div class="menu-list">
-                <a href="#入门概览">
-                    <div class="menu-item">Page.js是什么</div>
-                </a>
-                <a href="#安装">
-                    <div class="menu-item">安装</div>
-                </a>
-                <a href="#快速上手">
-                    <div class="menu-item">快速上手</div>
-                </a>
-            </div>
-        </div>
-        <div class="menu">
-            <div class="menu-title">
-                <div class="name">配置框架</div>
-            </div>
-            <div class="menu-list">
-                <a href="#配置框架">
-                    <div class="menu-item">实例化</div>
-                </a>
-                <a href="#实例化参数">
-                    <div class="menu-item">实例化参数</div>
-                </a>
-                <a href="#全局路由参数">
-                    <div class="menu-item">全局路由参数</div>
-                </a>
-            </div>
-        </div>
-        <div class="menu">
-            <div class="menu-title">
-                <div class="name">框架层路由</div>
-            </div>
-            <div class="menu-list">
-                <a href="#框架层路由">
-                    <div class="menu-item">路由概念</div>
-                </a>
-                <a href="#open">
-                    <div class="menu-item">open</div>
-                </a>
-                <a href="#reload">
-                    <div class="menu-item">reload</div>
-                </a>
-                <a href="#redirect">
-                    <div class="menu-item">redirect</div>
-                </a>
-                <a href="#close">
-                    <div class="menu-item">close</div>
-                </a>
-                <a href="#closeAll">
-                    <div class="menu-item">closeAll</div>
-                </a>
-                <a href="#postMessage">
-                    <div class="menu-item">postMessage</div>
-                </a>
-                <a href="#syncHeightByPageId">
-                    <div class="menu-item">syncHeightByPageId</div>
-                </a>
-                <a href="#setTitle">
-                    <div class="menu-item">setTitle</div>
-                </a>
-                <a href="#recoverCache">
-                    <div class="menu-item">recoverCache</div>
-                </a>
-                <a href="#clearCache">
-                    <div class="menu-item">clearCache</div>
-                </a>
-            </div>
-        </div>
-        <div class="menu">
-            <div class="menu-title">
-                <div class="name">页面层路由</div>
-            </div>
-            <div class="menu-list">
-                <a href="#页面层路由">
-                    <div class="menu-item">路由概念</div>
-                </a>
-                <a href="#路由加载">
-                    <div class="menu-item">路由加载</div>
-                </a>
-                <a href="#child.open">
-                    <div class="menu-item">open</div>
-                </a>
-                <a href="#child.reload">
-                    <div class="menu-item">reload</div>
-                </a>
-                <a href="#child.redirect">
-                    <div class="menu-item">redirect</div>
-                </a>
-                <a href="#child.close">
-                    <div class="menu-item">close</div>
-                </a>
-                <a href="#child.closeAll">
-                    <div class="menu-item">closeAll</div>
-                </a>
-                <a href="#child.postMessage">
-                    <div class="menu-item">postMessage</div>
-                </a>
-                <a href="#child.setMessageReceiver">
-                    <div class="menu-item">setMessageReceiver</div>
-                </a>
-                <a href="#child.getMessageReceiver">
-                    <div class="menu-item">getMessageReceiver</div>
-                </a>
-                <a href="#child.syncHeight">
-                    <div class="menu-item">syncHeight</div>
-                </a>
-                <a href="#child.setTitle">
-                    <div class="menu-item">setTitle</div>
-                </a>
-                <a href="#child.getPageId">
-                    <div class="menu-item">getPageId</div>
-                </a>
-                <a href="#child.getSourcePageId">
-                    <div class="menu-item">getSourcePageId</div>
-                </a>
-                <a href="#child.getPageData">
-                    <div class="menu-item">getPageData</div>
-                </a>
-                <a href="#child.getGlobalData">
-                    <div class="menu-item">getGlobalData</div>
-                </a>
-                <a href="#child.messageReceiver">
-                    <div class="menu-item">messageReceiver</div>
-                </a>
-                <a href="#child.recoverCache">
-                    <div class="menu-item">recoverCache</div>
-                </a>
-                <a href="#child.clearCache">
-                    <div class="menu-item">clearCache</div>
-                </a>
-            </div>
-        </div>
-
-        <div class="menu">
-            <a href="/demo.html" target="_blank">
-                <div class="menu-title empty">
-                    <div class="name">Example 示例</div>
+    <body>
+        <div class="logo">Page.js</div>
+        <div class="header">API文档</div>
+        <div class="menu-ctn">
+            <div class="version" id="version"></div>
+            <div class="menu">
+                <div class="menu-title">
+                    <div class="name">入门概览</div>
                 </div>
-            </a>
-            <div class="menu-list">
+                <div class="menu-list">
+                    <a href="#入门概览">
+                        <div class="menu-item">Page.js是什么</div>
+                    </a>
+                    <a href="#安装">
+                        <div class="menu-item">安装</div>
+                    </a>
+                    <a href="#快速上手">
+                        <div class="menu-item">快速上手</div>
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-title">
+                    <div class="name">配置框架</div>
+                </div>
+                <div class="menu-list">
+                    <a href="#配置框架">
+                        <div class="menu-item">实例化</div>
+                    </a>
+                    <a href="#实例化参数">
+                        <div class="menu-item">实例化参数</div>
+                    </a>
+                    <a href="#全局路由参数">
+                        <div class="menu-item">全局路由参数</div>
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-title">
+                    <div class="name">框架层路由</div>
+                </div>
+                <div class="menu-list">
+                    <a href="#框架层路由">
+                        <div class="menu-item">路由概念</div>
+                    </a>
+                    <a href="#open">
+                        <div class="menu-item">open</div>
+                    </a>
+                    <a href="#refresh">
+                        <div class="menu-item">refresh</div>
+                    </a>
+                    <a href="#reload">
+                        <div class="menu-item">reload</div>
+                    </a>
+                    <a href="#redirect">
+                        <div class="menu-item">redirect</div>
+                    </a>
+                    <a href="#focus">
+                        <div class="menu-item new">focus</div>
+                    </a>
+                    <a href="#close">
+                        <div class="menu-item">close</div>
+                    </a>
+                    <a href="#closeAll">
+                        <div class="menu-item">closeAll</div>
+                    </a>
+                    <a href="#postMessage">
+                        <div class="menu-item">postMessage</div>
+                    </a>
+                    <a href="#syncHeight">
+                        <div class="menu-item">syncHeight</div>
+                    </a>
+                    <a href="#setTitle">
+                        <div class="menu-item">setTitle</div>
+                    </a>
+                    <a href="#recoverCache">
+                        <div class="menu-item">recoverCache</div>
+                    </a>
+                    <a href="#clearCache">
+                        <div class="menu-item">clearCache</div>
+                    </a>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-title">
+                    <div class="name">页面层路由</div>
+                </div>
+                <div class="menu-list">
+                    <a href="#页面层路由">
+                        <div class="menu-item">路由概念</div>
+                    </a>
+                    <a href="#路由加载">
+                        <div class="menu-item">路由加载</div>
+                    </a>
+                    <a href="#child.pageId">
+                        <div class="menu-item new">pageId</div>
+                    </a>
+                    <a href="#child.sourcePageId">
+                        <div class="menu-item new">sourcePageId</div>
+                    </a>
+                    <a href="#child.pageData">
+                        <div class="menu-item new">pageData</div>
+                    </a>
+                    <a href="#child.globalData">
+                        <div class="menu-item new">globalData</div>
+                    </a>
+                    <a href="#child.open">
+                        <div class="menu-item">open</div>
+                    </a>
+                    <a href="#child.refresh">
+                        <div class="menu-item">refresh</div>
+                    </a>
+                    <a href="#child.reload">
+                        <div class="menu-item">reload</div>
+                    </a>
+                    <a href="#child.redirect">
+                        <div class="menu-item">redirect</div>
+                    </a>
+                    <a href="#child.focus">
+                        <div class="menu-item new">focus</div>
+                    </a>
+                    <a href="#child.close">
+                        <div class="menu-item">close</div>
+                    </a>
+                    <a href="#child.closeAll">
+                        <div class="menu-item">closeAll</div>
+                    </a>
+                    <a href="#child.postMessage">
+                        <div class="menu-item">postMessage</div>
+                    </a>
+                    <a href="#child.setMessageReceiver">
+                        <div class="menu-item">setMessageReceiver</div>
+                    </a>
+                    <a href="#child.getMessageReceiver">
+                        <div class="menu-item">getMessageReceiver</div>
+                    </a>
+                    <a href="#child.syncHeight">
+                        <div class="menu-item">syncHeight</div>
+                    </a>
+                    <a href="#child.setTitle">
+                        <div class="menu-item">setTitle</div>
+                    </a>
+                    <a href="#child.recoverCache">
+                        <div class="menu-item">recoverCache</div>
+                    </a>
+                    <a href="#child.clearCache">
+                        <div class="menu-item">clearCache</div>
+                    </a>
+                    <a href="#child.messageReceiver">
+                        <div class="menu-item removed">messageReceiver</div>
+                    </a>
+                    <a href="#child.getPageId">
+                        <div class="menu-item removed">getPageId</div>
+                    </a>
+                    <a href="#child.getSourcePageId">
+                        <div class="menu-item removed">getSourcePageId</div>
+                    </a>
+                    <a href="#child.getPageData">
+                        <div class="menu-item removed">getPageData</div>
+                    </a>
+                    <a href="#child.getGlobalData">
+                        <div class="menu-item removed">getGlobalData</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu">
+                <a href="/demo.html" target="_blank">
+                    <div class="menu-title empty">
+                        <div class="name">Example 示例</div>
+                    </div>
+                </a>
+                <div class="menu-list"></div>
             </div>
         </div>
-    </div>
-    <div class="main">
-        <div class="doc" id="doc">
+        <div class="main">
+            <div class="doc" id="doc"></div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>

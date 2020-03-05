@@ -2,7 +2,7 @@
 
 ## 实例化
 
-使用Page.js第一步需要在父页面对框架进行实例化。
+使用 Page.js 第一步需要在父页面对框架进行实例化。
 
 ```javascript
 // 实例化
@@ -14,19 +14,18 @@ var page = new Page()
 ```javascript
 // 使用configure实例化
 var page = new Page({
-	// 开发者模式
-	devMode: true, 
-	// 设定标题容器
-	titleContainer: '#titleContainer', 
-	// 设定页面容器
-	viewContainer: '#viewContainer', 
-	// 页面上限
-	limit: 99 
+    // 开发者模式
+    devMode: true,
+    // 设定标题容器
+    titleContainer: '#titleContainer',
+    // 设定页面容器
+    viewContainer: '#viewContainer',
+    // 页面上限
+    limit: 99
 })
 ```
 
 具体的参数请参考 [实例化参数](#实例化参数)
-
 
 ## 实例化参数
 

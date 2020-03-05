@@ -97,7 +97,7 @@
 			.menu-item
 				padding 0.5rem 1rem 0.5rem 1rem
 				height 1rem
-				line-height 1rem
+				line-height @height
 				font-size 0.7rem
 				text-indent 2em
 				white-space nowrap
@@ -105,6 +105,18 @@
 				&:hover
 					background-color rgba(color-theme, 0.1)
 					color color-theme - #222222
+				&.new
+					&:after
+						content 'new'
+						background-color color-theme
+						margin-left 0.5rem
+						padding 0 0.25rem
+						line-height @height
+						border-radius @height
+						font-size 0.6rem
+						color #FFFFFF
+				&.removed
+					text-decoration line-through
 		&[expand='true']
 			.menu-title
 				&:after
