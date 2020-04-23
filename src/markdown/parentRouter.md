@@ -168,3 +168,28 @@ if (!page.recoverCache()) {
 <h2 id="clearCache">clearCache()</h2>
 
 `clearCache`方法用于手动清除本地缓存。
+
+<h2 id="getData">getData([pageId: String])</h2>
+
+`getData`方法用于获取框架传递的数据，当`pageId`不传或为空时，返回全局传递数据。
+
+<div class="box warning">注意：这里返回的所有指针类型数据，都是经过克隆的数据，直接修改并不会影响到原有数据，若需修改请使用<a href="#updateData"><code>updateData</code></a>方法。</div>
+
+```javascript
+page.getData() // { test: 1 }
+page.getData().test = 2
+page.getData() // { test: 1 }
+```
+
+<h2 id="updateData">updateData(update: Function[ ,pageId: String])</h2>
+
+`updateData`方法用于修改框架传递的数据，`update`为修改方法，该方法会接收原有数据的克隆数据（无法直接修改），并将返回值作为新的数据保存；`pageId`不传或为空时，表示修改全局传递数据。
+
+```javascript
+page.updateData((globalData) => {
+    console.log(globalData) // { test : 1 }
+    globalData.test = 2
+    return { test: 3 }
+})
+page.getData() // { test : 3 }
+```

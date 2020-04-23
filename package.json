@@ -9,7 +9,7 @@
         "@babel/cli": "^7.4.4",
         "@babel/core": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
-        "@styzy/page-js": "^1.3.0",
+        "@styzy/page-js": "^1.3.4",
         "autoprefixer": "^9.6.1",
         "babel-loader": "^8.0.6",
         "css-loader": "^3.0.0",
